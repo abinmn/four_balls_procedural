@@ -1,10 +1,10 @@
 import processing.core.PApplet;
 
-public class TryProcessing extends PApplet {
+public class FourBalls extends PApplet {
 
     public static final int WIDTH = 640;
     public static final int HEIGHT = 480;
-    public static final int RADIUS = 10;
+    public static final int DIAMETER = 10;
     private int xAxis = 0;
 
     public static void main(String[] args) {
@@ -34,7 +34,10 @@ public class TryProcessing extends PApplet {
     }
 
     private void drawBall(int speedOfBall, double relativeHeight) {
-        ellipse(getXAxis(speedOfBall), getYAxis(relativeHeight), RADIUS, RADIUS);
+        float xAxis = getXAxis(speedOfBall);
+        float yAxis = getYAxis(relativeHeight);
+
+        ellipse(xAxis, yAxis, DIAMETER, DIAMETER);
     }
 
     private float getYAxis(double relativeHeight) {
