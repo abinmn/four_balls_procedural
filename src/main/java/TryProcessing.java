@@ -21,6 +21,28 @@ public class TryProcessing extends PApplet {
     public void setup() {
     }
 
+    @Override
+    public void draw() {
+        for (int i = 1; i <= 4; i++) {
+            drawBall(i, 0.2*i);
+        }
+        changeHorizontalPositionOfBall();
+    }
 
+    private void changeHorizontalPositionOfBall() {
+        xAxis++;
+    }
+
+    private void drawBall(int speedOfBall, double relativeHeight) {
+        ellipse(getXAxis(speedOfBall), getYAxis(relativeHeight), RADIUS, RADIUS);
+    }
+
+    private float getYAxis(double relativeHeight) {
+        return (float) (HEIGHT * relativeHeight);
+    }
+
+    private float getXAxis(int speedOfBall) {
+        return xAxis * speedOfBall;
+    }
 
 }
